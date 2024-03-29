@@ -15,9 +15,12 @@ and offers many performance benefits over the default Java Serialization impleme
 Serenity serenity = new Serenity();
 byte[] byteArray = serenity.writeObjectAsBytes(objectToBeSerialized);
 ```
-Serenity reads all the non-final fields declared in the class and converts them into custom classes. 
-Once all the custom classes are created for all the fields, it then converts them into bytes and return a byte array
+
+4) Serenity reads all the non-final fields declared in the class and converts them into custom classes. 
+Once all the custom classes are created for all the fields, it then converts them into bytes and return a byte array.
+
 -------------
+
 One more implementation that mimics the jackson reading of fields in the class, that is using getter methods. 
 This is used to solve the problem of unnecessary reading of fields that are not required for serialization, but downside is that it significantly impacts the performance of the Serenity.
 ```java
